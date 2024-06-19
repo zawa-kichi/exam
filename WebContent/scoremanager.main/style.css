@@ -1,0 +1,72 @@
+.base h1{
+	background: content-box;
+	background-color: #d7e8f9;
+	vretical-align: middle;
+	height: 75px;
+	vertical-align: 10px;
+}
+.base span{
+	float: right;
+}
+.base a{
+	float: right;
+}
+
+a{
+	margin-left: 10%;
+	padding-botton: 3px;
+}
+li{
+	margin-left: 5%;
+	padding-botton: 3px;
+}
+
+p{
+	text-align: center;
+}
+
+footer{
+	text-align: center;
+	background-color: #e9eaeb;
+    box-sizing: border-box;
+}
+h2{
+	text-align: center;
+	background-color: #e9eaeb;
+	margin-left: 180px;
+	border-radius: 5px;
+}
+label{
+	display: flex;
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 60%;
+    margin: 30px 0;
+    padding-top: 30px;
+}
+.main {
+    width: 85%;
+    float: right;
+}
+.create {
+    width: 85%;
+    float: right;
+}
+.create label{
+	text-align: 40%;
+}
+.menu{
+	display: flex;
+}
+.sidebar {
+  width: 180px;
+  float: left;
+  border-right: 1px #dddddd solid;
+}
+.sidebar a{
+	line-height: 2;
+}
