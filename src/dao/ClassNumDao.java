@@ -8,46 +8,53 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.School;
-import bean.Student;
 
-public class ClassNumDao extends Dao{
-	public List<Student> filter( School school)throws Exception{
-		// リストを初期化
-		List<Student> list = new ArrayList<>();
-		// コネクションを確立
+public class ClassNumDao extends Dao {
+	/*
+	 * filter:学校を指定し、クラス番号リストをデータベースから抽出する
+	 */
+	public List<String> filter(School school) throws Exception {
+		// list:検索結果
+		List<String> list = new ArrayList<>();
+		// データベースと接続
 		Connection connection = getConnection();
-		// プリペアードステートメント
+		// SQL文を準備
 		PreparedStatement statement = null;
-		// リザルトセット
-		ResultSet rSet= null;
-		// SQL文の条件
-		String order  = "order by no asc";
-		try{
-			// プリペアードステートメントにSQL文を実行
-			statement = connection.prepareStatement(order);
-			// プリペアードステートメントに学生コードをバインド
-			statement.setString(1,school.getCd());
-			// プライベートステートメントを実行
-			rSet = statement.executeQuery();
-			// リストへの格納処理を実行
-			list = filter(school);
-		}catch(Exception e){
-			throw e;
-		}finally{
-			// プリペアードステートメントを閉じる
-			if (statement != null){
-				try{
+		try {
+			String sql = "select class_num from class_num where school_cd = ? order by class_num";
+			statement = connection.prepareStatement(sql);
+			String cd = school.getCd();
+			statement.setString(1, cd);
+			StringBuilder printSql = new StringBuilder();
+			printSql.append("検索用SQL文:'");
+			printSql.append(sql.replaceFirst("\\?", cd));
+			printSql.append("'");
+			System.out.println(printSql);
+			// 検索結果を格納
+			ResultSet set = statement.executeQuery();
+			try {
+				while (set.next()) {
+					String classNum = set.getString("class_num");
+					list.add(classNum);
+				}
+			} catch (Exception e) {
+				 e.printStackTrace();
+			}
+		} catch (Exception e) {
+			 throw e;
+		} finally {
+			if (statement != null) {
+				try {
 					statement.close();
-				}catch(SQLException sqle){
-					throw sqle;
+				} catch (SQLException sqlException) {
+					 throw sqlException;
 				}
 			}
-			// コネクションを閉じる
-			if (connection != null){
-				try{
+			if (connection != null) {
+				try {
 					connection.close();
-				}catch(SQLException sqle){
-					throw sqle;
+				} catch (SQLException sqlException) {
+					 throw sqlException;
 				}
 			}
 		}

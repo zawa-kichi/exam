@@ -8,10 +8,10 @@
 .base span{
 	float: right;
 }
+<!-- 次はここを下に動かす -->
 .base a{
 	float: right;
 }
-
 a{
 	margin-left: 10%;
 	padding-botton: 3px;
@@ -20,11 +20,9 @@ li{
 	margin-left: 5%;
 	padding-botton: 3px;
 }
-
 p{
 	text-align: center;
 }
-
 footer{
 	text-align: center;
 	background-color: #e9eaeb;
@@ -39,7 +37,6 @@ h2{
 label{
 	display: flex;
 }
-
 .list{
     display: flex;
     flex-wrap: wrap;
@@ -69,4 +66,39 @@ label{
 }
 .sidebar a{
 	line-height: 2;
+}
+table {
+    width: 100%; /* テーブル全体の幅を100%に設定 */
+    border-collapse: collapse; /* 境界線の重なりをなくす */
+    margin: 20px 0; /* 上下に20ピクセルのマージンを設定 */
+}
+th, td {
+    padding: 10px; /* セル内に10ピクセルのパディングを設定 */
+    border: 1px solid #ddd; /* セルの境界線を設定 */
+    text-align: left; /* テキストを左揃えに設定 */
+}
+th {
+    background-color: #blue; /* ヘッダーセルの背景色を設定 */
+}
+.base {
+    text-align: center;
+    margin: 20px;
+}
+.error-message {
+    text-align: center;
+    margin-top: 50px;
+}
+.error-message h1 {
+    display: inline; /* h1の部分をインラインにしてズレを防ぐ */
+}
+.error-message a {
+    display: block; /* aタグをブロック要素にして改行を強制 */
+    margin-top: 10px;
+}
+}
+
+.menu-group {
+	padding: 5px 10px;
+	margin-block: 5% 2%;
+
 }
