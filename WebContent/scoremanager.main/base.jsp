@@ -12,6 +12,8 @@
   <h1 style="text-align:center">得点管理システム</h1>
   <%@page import="java.util.Objects"%>
   <%@page import="bean.Teacher"%>
+
+  <!-- TeacherのセッションをJSPに適用 -->
   <%Teacher user = (Teacher)session.getAttribute("user");
   boolean userIsNotNull = Objects.nonNull(user);
   if (userIsNotNull){
@@ -34,6 +36,7 @@
 
 
 <nav>
+	<!-- ログインしてるときにサイドバーを表示する -->
 	<c:if test="${userIsNotNull}">
 	<div class="sidebar">
 		<a href="Menu.action">メニュー</a><br>
@@ -42,7 +45,6 @@
 		<a href="TestRegist.action">成績登録</a><br>
 		<a href="TestList.action">成績参照</a><br>
 		<a href="SubjectList.action">科目管理</a><br>
-		<!-- あとでここは消して -->
 	</div>
   	</c:if>
 </nav>

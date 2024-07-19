@@ -114,10 +114,7 @@
 									仕様書ではaタグの指定であったが、
 									想定通りの動作にならないため、formタグを用いている
 									-->
-									<form action="StudentUpdate.action">
-										<input type="hidden" name="student_no" value="${student.no}">
-										<button>変更</button>
-									</form>
+									<a href="StudentUpdate.action?no=${student.no}">変更</a>
 								</td>
 								<!-- /学生情報変更リンク -->
 							</tr>

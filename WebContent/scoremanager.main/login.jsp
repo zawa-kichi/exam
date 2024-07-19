@@ -15,7 +15,7 @@
 	</div>
 	<div>
 		<label for="password">パスワード</label>
-		<input type="password" id="password" name="password" required>
+		<input type="password" id="password" name="password" maxlength="20" required>
 		<c:forEach var="password" items="${password}">
 			<option value="${password}">${password}<option>
 		</c:forEach>
