@@ -5,7 +5,10 @@
 <%@include file="base.jsp" %>
 
 <form action="SubjectCreateDone.action">
+	<!-- 画面タイトル -->
 	<h2>科目情報登録</h2>
+
+	<!-- 登録完了メッセージ -->
 	<p>登録が完了しました。</p>
 
 	<a href="SubjectCreate.action">戻る</a>

@@ -47,6 +47,6 @@ public class StudentUpdateAction extends Action {
 		boolean isAttend = student.isAttend();
 		req.setAttribute("is_attend", isAttend);
 		System.out.println("★ file name -> /scoremanager.main/student_update.jsp");
-		req.getRequestDispatcher("subject_update.jsp").forward(req, res);
+		req.getRequestDispatcher("student_update.jsp").forward(req, res);
 	}
 }

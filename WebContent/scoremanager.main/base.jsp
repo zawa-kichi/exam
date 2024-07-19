@@ -29,18 +29,20 @@
   <!-- ログアウト -->
   <a href="Logout.action">ログアウト</a>
   <!-- /ログアウト -->
-  </c:if>
+  	</c:if>
 </div>
 
 
 <nav>
+	<c:if test="${userIsNotNull}">
 	<div class="sidebar">
-		<a href="menu.jsp">メニュー</a><br>
+		<a href="Menu.action">メニュー</a><br>
 		<a href="StudentList.action">学生管理</a><br>
-		<a href="#">成績管理</a><br>
-		<a href="#">成績登録</a><br>
-		<a href="#">成績参照</a><br>
+		<label>成績管理</label>
+		<a href="TestRegist.action">成績登録</a><br>
+		<a href="TestList.action">成績参照</a><br>
 		<a href="SubjectList.action">科目管理</a><br>
 		<!-- あとでここは消して -->
 	</div>
+  	</c:if>
 </nav>

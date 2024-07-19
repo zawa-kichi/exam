@@ -5,6 +5,7 @@
 <%@include file="base.jsp" %>
 
 <form action="SubjectCreateExecute.action">
+	<!-- 画面タイトル -->
 	<h2>科目情報登録</h2>
 	<div class="subject.create">
 		<div>
@@ -16,7 +17,7 @@
 				   maxlength="3"
 				   value="${cd}"
 			       required>
-			<c:if test="${empty var}"></c:if>
+			<c:if test="$}"></c:if>
 		</div>
 		<div>
 			<label for="name">科目名</label>
@@ -32,6 +33,7 @@
 			<button type="submit">登録</button>
 		</div>
 		<div>
+			<!-- 戻るリンク -->
 			<a href="SubjectList.action">戻る</a>
 		</div>
 	</div>

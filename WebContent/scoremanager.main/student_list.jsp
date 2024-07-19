@@ -1,9 +1,9 @@
-<%@page contentType="text/html; charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:import url="base.jsp">
-	<c:param name="title">得点管理システム</c:param>
-	<c:param name="contents">
-		<section>
+<!-- 学生管理一覧JSP -->
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" href="../base/style.css">
+<%@include file="base.jsp" %>
+
 			<!-- 画面タイトル -->
 			<h2>学生管理</h2>
 			<!-- /画面タイトル -->
@@ -12,7 +12,7 @@
 				<a href="StudentCreate.action">新規登録</a>
 			</div>
 			<!-- /新規登録リンク -->
-			<form method="post">
+			<form action="StudentList.action">
 				<!-- 入学年度セレクトボックス -->
 				<label>入学年度</label>
 				<select name="f1">
@@ -125,11 +125,8 @@
 					</table>
 				</c:when>
 				<c:otherwise>
-					<!-- 学生情報無しメッセージ -->
-					<div>学生情報が存在しませんでした</div>
-					<!-- /学生情報無しメッセージ -->
-				</c:otherwise>
-			</c:choose>
-		</section>
-	</c:param>
-</c:import>
+		<!-- 学生情報無しメッセージ -->
+		<div>学生情報が存在しませんでした</div>
+		<!-- /学生情報無しメッセージ -->
+	</c:otherwise>
+</c:choose>

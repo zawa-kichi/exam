@@ -44,6 +44,8 @@
   <!-- カラーの参考は https://www.colordic.org/ から引用 -->
 </head>
 <body>
+
+<form action="Menu.action">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <div class="container">
         <h2 class="text-center">メニュー</h2>
@@ -60,8 +62,8 @@
             <div class="menu-group grade-management">
                 <h3>成績管理</h3>
                 <ul>
-                    <li><a href="#">成績登録</a></li>
-                    <li><a href="#">成績参照</a></li>
+                    <li><a href="TestRegist.action">成績登録</a></li>
+                    <li><a href="TestList.action">成績参照</a></li>
                 </ul>
             </div>
             <div class="menu-group subject-management">
@@ -76,5 +78,6 @@
         <p>©2023 THC</p>
         <p>大原学園</p>
     </footer>
+    </form>
 </body>
 </html>
