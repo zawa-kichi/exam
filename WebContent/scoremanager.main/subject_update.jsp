@@ -19,13 +19,16 @@
 				readonly>
 		</div>
 		<div>
+			${errors.get("cd")}
+		</div>
+		<div>
 			<label for="name">科目名</label>
 			<input type="text"
 				   id="name"
 				   name="name"
 				   placeholder="科目名を入力してください。"
 				   maxlength="20"
-				   value="${subject.name}"
+				   value="${name}"
 				   required>
 		</div>
 		<div>

@@ -1,5 +1,7 @@
 package scoremanager.main;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,16 +67,25 @@ public class SubjectUpdateExecuteAction extends Action {
         subject.setSchool(school);
 
         SubjectDao dao = new SubjectDao();
+        Map<String, String> errors = new HashMap<String, String>();
         try {
-            boolean success = dao.save(subject);
-            if (success) {
-                System.out.println("Subject Updated successfully");
-                req.getRequestDispatcher("subject_update_done.jsp").forward(req, res);
-            } else {
-                System.out.println("Failed to Update subject");
-                req.setAttribute("errorMessage", "科目の削除に失敗しました。");
-                req.getRequestDispatcher("error.jsp").forward(req, res);
-            }
+        	if (Objects.isNull(dao.get(cd, school))) {
+				errors.put("cd", "科目が存在していません。");
+				req.setAttribute("errors", errors);
+		        req.setAttribute("cd", cd);
+		        req.setAttribute("name", name);
+                req.getRequestDispatcher("subject_update.jsp").forward(req, res);
+			} else {
+	            boolean success = dao.save(subject);
+	            if (success) {
+	                System.out.println("Subject Updated successfully");
+	                req.getRequestDispatcher("subject_update_done.jsp").forward(req, res);
+	            } else {
+	                System.out.println("Failed to Update subject");
+	                req.setAttribute("errorMessage", "科目の削除に失敗しました。");
+	                req.getRequestDispatcher("error.jsp").forward(req, res);
+	            }
+			}
         } catch (Exception e) {
             e.printStackTrace();  // 例外の詳細をログに出力
             req.setAttribute("errorMessage", "システムエラーが発生しました: " + e.getMessage());
