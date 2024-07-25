@@ -27,7 +27,7 @@ public class SubjectDeleteAction extends Action{
 		// 科目の科目コードを取得
 		req.setAttribute("cd", cd);
 		// 科目の名前を取得
-		String name = subject.getName();
+		String name = subject.getName() + "(" + cd + ")";
 		req.setAttribute("name", name);
 		System.out.println("★ file name -> /scoremanager.main/student_update.jsp");
 		req.getRequestDispatcher("subject_delete.jsp").forward(req, res);
