@@ -6,21 +6,34 @@
 
 <form action="SubjectList.action">
 	<h2>科目管理</h2>
-	<div>
+	<div class="subject-create">
 		<a href="SubjectCreate.action">新規登録</a>
 	</div>
-	<table>
-		<tr>
-			<th>科目コード</th>
-			<th>科目名</th>
-		</tr>
-		<c:forEach var="subject" items="${subjects}">
+	<div class="subject-list">
+		<table>
 			<tr>
-				<td>${subject.cd}</td>
-				<td>${subject.name}</td>
-				<td><a href="SubjectUpdate.action?cd=${subject.cd}">変更</a></td>
-				<td><a href="SubjectDelete.action?cd=${subject.cd}">削除</a></td>
+				<th>科目コード</th>
+				<th>科目名</th>
 			</tr>
-		</c:forEach>
-	</table>
+			<c:forEach var="subject" items="${subjects}">
+				<tr>
+					<td>${subject.cd}</td>
+					<td>${subject.name}</td>
+					<td><a href="SubjectUpdate.action?cd=${subject.cd}">変更</a></td>
+					<td><a href="SubjectDelete.action?cd=${subject.cd}">削除</a></td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 </form>
+
+<style>
+	.subject-create{
+		text-align: right;
+		}
+
+	.subject-list{
+		margin-left :14%;
+		margin-right: 10%;
+		}
+</style>

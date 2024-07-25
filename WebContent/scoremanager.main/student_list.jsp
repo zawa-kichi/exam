@@ -8,7 +8,7 @@
 			<h2>学生管理</h2>
 			<!-- /画面タイトル -->
 			<!-- 新規登録リンク -->
-			<div>
+			<div class="student-create">
 				<a href="StudentCreate.action">新規登録</a>
 			</div>
 			<!-- /新規登録リンク -->
@@ -63,6 +63,7 @@
 					<!-- 検索結果件数 -->
 					<div>検索結果：${students.size()}件</div>
 					<!-- /検索結果件数 -->
+					<div class="student-list">
 					<table>
 						<tr>
 							<!-- 入学年度（ヘッダー） -->
@@ -120,6 +121,7 @@
 							</tr>
 						</c:forEach>
 					</table>
+					</div>
 				</c:when>
 				<c:otherwise>
 		<!-- 学生情報無しメッセージ -->
@@ -127,3 +129,14 @@
 		<!-- /学生情報無しメッセージ -->
 	</c:otherwise>
 </c:choose>
+
+<style>
+	.student-create{
+		text-align: right;
+		}
+
+	.student-list{
+		margin-left :14%;
+		margin-right: 10%;
+		}
+</style>

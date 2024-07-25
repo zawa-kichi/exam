@@ -3,6 +3,7 @@ package scoremanager.main;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,8 +26,14 @@ public class SubjectCreateExecuteAction extends Action {
 
             // エラー一覧
             Map<String, String> errors = new HashMap<>();
-            String cd = req.getParameter("cd");
             String name = req.getParameter("name");
+
+    		// 科目コード入力テキストから、登録する生徒の学生番号を取得
+    		String getCd = req.getParameter("cd");
+    		String cd = "";
+    		if (Objects.nonNull(getCd)) {
+    			cd = getCd;
+    		}
 
             // 科目番号の長さチェック
             if (cd == null || cd.length() != 3) {
@@ -38,15 +45,10 @@ public class SubjectCreateExecuteAction extends Action {
             School school = teacher.getSchool();
             List<Subject> subjects = subjectDao.filter(school);
             for (Subject subject : subjects) {
-                if (cd != null && cd.equals(subject.getCd())) {
+                if (cd.equals(subject.getCd())) {
                     errors.put("cd", "科目番号が重複しています");
                     break;
                 }
-            }
-
-            // 科目名の必須チェック
-            if (name == null || name.isEmpty()) {
-                errors.put("name", "科目名は必須です");
             }
 
             // エラーがある場合、登録画面に戻る
