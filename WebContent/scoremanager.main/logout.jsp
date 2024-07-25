@@ -4,12 +4,17 @@
 <link rel="stylesheet" href="style.css">
 <%@include file="base.jsp" %>
 
-		<form action="Logout.action">
-			<div class="container">
-				<h2>ログアウト</h2>
-					<div class="main">
-					<p>ログアウトしました</p>
-					<a href="Login.Action">ログイン</a>
-					</div>
+<form action="Logout.action">
+	<div class="container">
+		<h2>ログアウト</h2>
+			<div class="main">
+			<!-- ログアウトメッセージ -->
+			<p>ログアウトしました</p>
+			<a href="Login.Action">ログイン</a>
 			</div>
-		</form>
+	</div>
+	<footer class="mt-4 text-center">
+        <p>©2023 THC</p>
+        <p>大原学園</p>
+    </footer>
+</form>

@@ -5,10 +5,10 @@
 <%@include file="base.jsp" %>
 
 <section>
+		<div class="test">
 		<!-- 画面タイトル -->
 		<h2>成績参照</h2>
 		<!-- /画面タイトル -->
-		<div>
 			<!-- 科目情報 -->
 			<div>
 				<form action="TestListSubjectExecute.action">
@@ -111,3 +111,12 @@
 		<p>科目情報を選択または学生情報を入力して検索ボタンをクリックしてください</p>
 	</div>
 </section>
+
+<style>
+	.test{
+		margin-left :15%;
+		margin-right: 10%;
+
+		}
+</style>
+

@@ -5,10 +5,10 @@
 <%@include file="base.jsp" %>
 
 		<section>
+			<div class="test-subject">
 			<!-- 画面タイトル -->
 			<h2>成績参照</h2>
 			<!-- /画面タイトル -->
-			<div>
 				<!-- 科目情報 -->
 				<div>
 					<form action="TestListSubjectExecute.action">
@@ -76,7 +76,7 @@
 				</div>
 				<!-- /科目情報 -->
 				<!-- 学生情報 -->
-				<div>
+				<div class="test-subject_table">
 					<form action="TestListStudentExecute.action">
 						学生情報
 						<table>
@@ -175,3 +175,15 @@
 				</c:otherwise>
 			</c:choose>
 		</section>
+
+<style>
+	.test-subject{
+		margin-left :15%;
+		margin-right: 10%;
+		}
+
+	.test-subject_table{
+		margin-left :15%;
+		margin-right: 10%;
+		}
+</style>

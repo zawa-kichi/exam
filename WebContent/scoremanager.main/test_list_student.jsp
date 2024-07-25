@@ -4,10 +4,10 @@
 <link rel="stylesheet" href="style.css">
 <%@include file="base.jsp" %>
 		<section>
+			<div class="test-student">
 			<!-- 画面タイトル -->
 			<h2>成績参照</h2>
 			<!-- /画面タイトル -->
-			<div>
 				<!-- 科目情報 -->
 				<div>
 					<form action="TestListSubjectExecute.action">
@@ -111,7 +111,7 @@
 			</div>
 			<c:choose>
 				<c:when test="${tests.size() > 0}">
-					<div>
+					<div class="test-student_table">
 						<table>
 							<tr>
 								<!-- ヘッダー -->
@@ -157,3 +157,15 @@
 				</c:otherwise>
 			</c:choose>
 		</section>
+
+<style>
+	.test-student{
+		margin-left :15%;
+		margin-right: 10%;
+		}
+
+	.test-student_table{
+		margin-left :15%;
+		margin-right: 10%;
+		}
+</style>
