@@ -17,7 +17,9 @@
 				   maxlength="3"
 				   value="${cd}"
 			       required>
-			<c:if test="$}"></c:if>
+		</div>
+		<div>
+			${errors.get("cd")}
 		</div>
 		<div>
 			<label for="name">科目名</label>
