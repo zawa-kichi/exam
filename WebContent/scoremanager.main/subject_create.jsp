@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- 科目情報登録JSP -->
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -40,8 +39,4 @@
 			<a href="SubjectList.action">戻る</a>
 		</div>
 	</div>
-	<c:if test="${subject.cd.length()< 3}">
-		<p>科目コードは3文字以上で入力してください。
-	</c:if>
-
 </form>
